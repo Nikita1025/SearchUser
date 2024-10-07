@@ -8,3 +8,9 @@
 .normal {
     background: var(--card-bg);
 }
+
+@media screen and (max-width: 380px) {
+    .Card {
+        width: 320px;
+    }
+}
