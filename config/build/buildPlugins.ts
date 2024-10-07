@@ -1,9 +1,9 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BuildOptions } from './types/config';
+import path from 'path';
 
 export function buildPlugins({
     paths, isDev, apiUrl, project,
@@ -11,6 +11,7 @@ export function buildPlugins({
     const plugins = [
         new HtmlWebpackPlugin({
             template: paths.html,
+            favicon: path.resolve(paths.public, 'favicon.png'),
         }),
         new webpack.ProgressPlugin(),
         new MiniCssExtractPlugin({
