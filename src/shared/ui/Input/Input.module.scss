@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+}
+
+.placeholder {
+    margin-right: 15px;
+    color: rgb(219 219 219 / 100%);
+}
+
+.input {
+    border: none;
+    outline: none;
+    background: none;
+    width: 60%;
+    color: rgb(219 219 219 / 100%);
+    text-shadow: 0 0 0 rgb(219 219 219 / 100%);
+}

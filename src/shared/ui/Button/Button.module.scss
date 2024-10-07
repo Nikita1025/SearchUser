@@ -1,0 +1,33 @@
+.container {
+    cursor: pointer;
+    border-radius: 32px;
+
+    &:hover {
+        opacity: 0.8;
+        fill-opacity: 80%;
+        stroke-opacity: 80%;
+    }
+}
+
+.outline {
+    padding: 10px 15px;
+    border: none;
+    color: rgb(219 219 219 / 100%);
+    background: rgb(21 28 31 / 100%);
+}
+
+.size_m {
+    font: var(--font-m);
+}
+
+.size_l {
+    font: var(--font-l);
+}
+
+.size_xl {
+    font: var(--font-xl);
+}
+
+.disabled {
+    opacity: 0.5;
+}

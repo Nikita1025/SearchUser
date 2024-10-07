@@ -1,0 +1,25 @@
+:root {
+    --font-family-main: consolas, "Times New Roman", serif;
+    --font-size-m: 16px;
+    --font-line-m: 24px;
+    --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
+    --font-size-l: 24px;
+    --font-line-l: 32px;
+    --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+    --font-size-xl: 32px;
+    --font-line-xl: 40px;
+    --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
+    --navbar-height: 50px;
+    --sidebar-width: 300px;
+    --sidebar-width-collapsed: 80px;
+
+    // z index
+    --modal-z-index: 10;
+    --bg-color: rgb(12 18 20 / 100%);
+    --card-bg: rgb(21 28 31 / 100%);
+
+    // Цвета
+    --color: rgb(219 219 219 / 100%);
+    --red-light: rgba(243 9 9);
+    --red-dark: rgba(143 5 5);
+}
