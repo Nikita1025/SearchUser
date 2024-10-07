@@ -42,6 +42,7 @@ export const UserSearchPage = memo(({ className }: HomePageProps) => {
             setIsOpen(true);
         }
     }, [error]);
+
     return (
         <div data-testid="wrapper" className={classNames(cls.HomePage, {}, [className])}>
             {isOpen && error && (

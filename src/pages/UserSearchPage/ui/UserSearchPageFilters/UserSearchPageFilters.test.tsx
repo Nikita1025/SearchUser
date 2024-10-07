@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import { renderComponents } from 'shared/lib/tests/renderComponents/renderComponents';
 import { UserSearchPageFilters } from './UserSearchPageFilters';
 
@@ -12,6 +12,13 @@ describe('UserSearchPageFilters', () => {
             },
         });
         expect(screen.getByTestId('sort-wrapper')).toBeInTheDocument();
-        expect(screen.getByTestId('input')).toBeInTheDocument();
+    });
+    test('search user', () => {
+        const onSearchMock = jest.fn();
+
+        renderComponents(<UserSearchPageFilters onSearch={onSearchMock} />);
+
+        fireEvent.click(screen.getByTestId('button'));
+        expect(onSearchMock).toHaveBeenCalledTimes(1);
     });
 });

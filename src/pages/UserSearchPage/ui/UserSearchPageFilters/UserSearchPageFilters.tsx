@@ -13,9 +13,10 @@ import { fetchUsers } from 'pages/UserSearchPage/model/service/fetchUsers/fetchU
 
 interface ArticlesPageFiltersProps {
     className?: string
+    onSearch?:()=>void
 }
 
-export const UserSearchPageFilters = memo(({ className }: ArticlesPageFiltersProps) => {
+export const UserSearchPageFilters = memo(({ className, onSearch }: ArticlesPageFiltersProps) => {
     const dispatch = useAppDispatch();
     const search = useSelector(getUserSearch);
 
@@ -23,16 +24,19 @@ export const UserSearchPageFilters = memo(({ className }: ArticlesPageFiltersPro
         dispatch(searchUsersSliceActions.setSearch(value));
     }, [dispatch]);
 
-    const onSearch = useCallback(() => {
+    const onSearchHandler = useCallback(() => {
+        if (onSearch) {
+            onSearch();
+        }
         dispatch(fetchUsers());
     }, [dispatch]);
 
     return (
         <div data-testid="sort-wrapper" className={classNames(cls.sortWrapper, {}, [className])}>
             <Card className={cls.search}>
-                <Input data-testid="input" value={search} onChange={onChangeSearch} placeholder="Введите имя" />
+                <Input value={search} onChange={onChangeSearch} placeholder="Введите имя" />
             </Card>
-            <Button onClick={onSearch} theme={ButtonTheme.OUTLINE}>
+            <Button data-testid="button" onClick={onSearchHandler} theme={ButtonTheme.OUTLINE}>
                 Искать
             </Button>
         </div>
